@@ -1,0 +1,638 @@
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-25 20:53:05 +0500
+
+ActiveRecord::ConnectionNotEstablished (ActiveRecord::ConnectionNotEstablished):
+  activerecord (4.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:541:in `retrieve_connection'
+  activerecord (4.1.4) lib/active_record/connection_handling.rb:113:in `retrieve_connection'
+  activerecord (4.1.4) lib/active_record/connection_handling.rb:87:in `connection'
+  activerecord (4.1.4) lib/active_record/query_cache.rb:51:in `restore_query_cache_settings'
+  activerecord (4.1.4) lib/active_record/query_cache.rb:43:in `rescue in call'
+  activerecord (4.1.4) lib/active_record/query_cache.rb:32:in `call'
+  activerecord (4.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.4) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/devsinc/.rvm/rubies/ruby-1.9.3-p547/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/devsinc/.rvm/rubies/ruby-1.9.3-p547/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/devsinc/.rvm/rubies/ruby-1.9.3-p547/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (34.7ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (56.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-25 20:54:01 +0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/railties-4.1.4/lib/rails/templates/rails/welcome/index.html.erb (28.3ms)
+Completed 200 OK in 97ms (Views: 62.5ms | ActiveRecord: 0.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (28.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateAccounts (20150725201519)
+  [1m[35m (223.5ms)[0m  CREATE TABLE `accounts` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `token` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (16.8ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150725201519')
+  [1m[36m (59.2ms)[0m  [1mCOMMIT[0m
+Migrating to CreateProducts (20150725201543)
+  [1m[35m (88.6ms)[0m  CREATE TABLE `products` (`id` int(11) auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150725201543')
+  [1m[36m (43.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to AddAccountIdTProducts (20150725202457)
+  [1m[35m (372.5ms)[0m  ALTER TABLE `products` ADD `account_id` int(11)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150725202457')
+  [1m[36m (36.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-26 01:32:52 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/railties-4.1.4/lib/rails/templates/rails/welcome/index.html.erb (2.2ms)
+Completed 200 OK in 43ms (Views: 34.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/bigcommerce" for 127.0.0.1 at 2015-07-26 01:32:54 +0500
+
+
+Started GET "/auth/bigcommerce/callback?code=396aumsttc5irzxlmjb4bjbkbud9pa&scope=users_basic_information+store_v2_products+store_v2_information&state=d9f397fcc111e439ee4f7641bceea8580aefbd075d152e74" for 127.0.0.1 at 2015-07-26 01:33:48 +0500
+Processing by AccountsController#create as HTML
+  Parameters: {"code"=>"396aumsttc5irzxlmjb4bjbkbud9pa", "scope"=>"users_basic_information store_v2_products store_v2_information", "state"=>"d9f397fcc111e439ee4f7641bceea8580aefbd075d152e74", "provider"=>"bigcommerce"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO `accounts` (`created_at`, `name`, `token`, `updated_at`) VALUES ('2015-07-25 20:33:52', 'bigcommerce', 'pbzlavvrdzwwcgfuuzdwwkbqtmtbqyc', '2015-07-25 20:33:52')[0m
+  [1m[35m (37.7ms)[0m  COMMIT
+Redirected to http://localhost:3000/accounts/1/products/fetch
+Completed 302 Found in 86ms (ActiveRecord: 39.9ms)
+
+
+Started GET "/accounts/1/products/fetch" for 127.0.0.1 at 2015-07-26 01:33:52 +0500
+Processing by ProductsController#fetch as HTML
+  Parameters: {"account_id"=>"1"}
+Completed 500 Internal Server Error in 3ms
+
+NameError (undefined local variable or method `token' for #<ProductsController:0x00000003fd3b00>):
+  app/controllers/products_controller.rb:5:in `fetch'
+
+
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.7ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.4ms)
+
+
+Started GET "/accounts/1/products/fetch" for 127.0.0.1 at 2015-07-26 01:34:26 +0500
+Processing by ProductsController#fetch as HTML
+  Parameters: {"account_id"=>"1"}
+  [1m[36mAccount Load (9.3ms)[0m  [1mSELECT  `accounts`.* FROM `accounts`  WHERE `accounts`.`id` = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 1741ms
+
+Bigcommerce::Forbidden ({"error":"You are authorized but your scope does not include this resource."}):
+  app/controllers/products_controller.rb:12:in `fetch'
+
+
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.3ms)
+
+
+Started GET "/accounts/1/products/fetch" for 127.0.0.1 at 2015-07-26 01:39:19 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by ProductsController#fetch as HTML
+  Parameters: {"account_id"=>"1"}
+  [1m[35mAccount Load (0.1ms)[0m  SELECT  `accounts`.* FROM `accounts`  WHERE `accounts`.`id` = 1 LIMIT 1
+Completed 500 Internal Server Error in 21ms
+
+NoMethodError (undefined method `configuration' for BigcommerceOAuthAPI:Module):
+  app/controllers/products_controller.rb:11:in `fetch'
+
+
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-26 02:46:19 +0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/railties-4.1.4/lib/rails/templates/rails/welcome/index.html.erb (0.9ms)
+Completed 200 OK in 112ms (Views: 30.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/bigcommerce" for 127.0.0.1 at 2015-07-26 02:46:36 +0500
+
+
+Started GET "/auth/bigcommerce/callback?code=4ertlt8t65oy4tsik83osmln8lofsbu&scope=users_basic_information+store_v2_products+store_v2_information&state=e8f19cc848840fe1b303722ebcb3dce9d61f77cc7ac9a635" for 127.0.0.1 at 2015-07-26 02:46:44 +0500
+
+LoadError (cannot load such file -- bigcommerce):
+  app/controllers/accounts_controller.rb:2:in `<class:AccountsController>'
+  app/controllers/accounts_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.7ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.7ms)
+
+
+Started GET "/auth/bigcommerce" for 127.0.0.1 at 2015-07-26 02:47:08 +0500
+
+
+Started GET "/auth/bigcommerce/callback?code=b9w8s73psyk5z24qq2forowss0zova4&scope=users_basic_information+store_v2_products+store_v2_information&state=5b71fab69d867dc615080237b4d666607f6f697b2c354c0f" for 127.0.0.1 at 2015-07-26 02:47:14 +0500
+Processing by AccountsController#create as HTML
+  Parameters: {"code"=>"b9w8s73psyk5z24qq2forowss0zova4", "scope"=>"users_basic_information store_v2_products store_v2_information", "state"=>"5b71fab69d867dc615080237b4d666607f6f697b2c354c0f", "provider"=>"bigcommerce"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (60.3ms)[0m  INSERT INTO `accounts` (`created_at`, `name`, `token`, `updated_at`) VALUES ('2015-07-25 21:47:17', 'bigcommerce', '7iv2pix7ektojwg98k7k1kvwpxkdwx5', '2015-07-25 21:47:17')
+  [1m[36m (96.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/accounts/2/products/fetch
+Completed 302 Found in 470ms (ActiveRecord: 425.9ms)
+
+
+Started GET "/accounts/2/products/fetch" for 127.0.0.1 at 2015-07-26 02:47:17 +0500
+Processing by ProductsController#fetch as HTML
+  Parameters: {"account_id"=>"2"}
+  [1m[35mAccount Load (12.6ms)[0m  SELECT  `accounts`.* FROM `accounts`  WHERE `accounts`.`id` = 2 LIMIT 1
+Completed 500 Internal Server Error in 14ms
+
+NoMethodError (undefined method `configuration' for BigcommerceOAuthAPI:Module):
+  app/controllers/products_controller.rb:11:in `fetch'
+
+
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.0ms)
+
+
+Started GET "/auth/bigcommerce" for 127.0.0.1 at 2015-07-26 02:56:46 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+
+
+Started GET "/auth/bigcommerce/callback?code=4ap2kes6wgf548bovn26a3dro9plou&scope=users_basic_information+store_v2_products+store_v2_information&state=93748e62d9bf75dcfa877a1ec67a6acc3ec26755846f9ff4" for 127.0.0.1 at 2015-07-26 02:57:17 +0500
+Processing by AccountsController#create as HTML
+  Parameters: {"code"=>"4ap2kes6wgf548bovn26a3dro9plou", "scope"=>"users_basic_information store_v2_products store_v2_information", "state"=>"93748e62d9bf75dcfa877a1ec67a6acc3ec26755846f9ff4", "provider"=>"bigcommerce"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO `accounts` (`created_at`, `name`, `token`, `updated_at`) VALUES ('2015-07-25 21:57:20', 'bigcommerce', 'o4xvd2dxd3w8zbjambag7rs85ypvqh1', '2015-07-25 21:57:20')[0m
+  [1m[35m (42.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/accounts/3/products/fetch
+Completed 302 Found in 91ms (ActiveRecord: 44.7ms)
+
+
+Started GET "/accounts/3/products/fetch" for 127.0.0.1 at 2015-07-26 02:57:20 +0500
+Processing by ProductsController#fetch as HTML
+  Parameters: {"account_id"=>"3"}
+  [1m[36mAccount Load (0.2ms)[0m  [1mSELECT  `accounts`.* FROM `accounts`  WHERE `accounts`.`id` = 3 LIMIT 1[0m
+Completed 500 Internal Server Error in 3ms
+
+NameError (uninitialized constant ProductsController::BigcommerceOAuthAPI):
+  app/controllers/products_controller.rb:13:in `fetch'
+
+
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.7ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.1ms)
+
+
+Started GET "/auth/bigcommerce" for 127.0.0.1 at 2015-07-26 02:58:10 +0500
+
+
+Started GET "/auth/bigcommerce/callback?code=chr22sxppzhu92bf2wiqsa2r110gh0v&scope=users_basic_information+store_v2_products+store_v2_information&state=98ffec825a974c10c805a87c426e615285d240bb2bc4b8db" for 127.0.0.1 at 2015-07-26 02:58:30 +0500
+Processing by AccountsController#create as HTML
+  Parameters: {"code"=>"chr22sxppzhu92bf2wiqsa2r110gh0v", "scope"=>"users_basic_information store_v2_products store_v2_information", "state"=>"98ffec825a974c10c805a87c426e615285d240bb2bc4b8db", "provider"=>"bigcommerce"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `accounts` (`created_at`, `name`, `token`, `updated_at`) VALUES ('2015-07-25 21:58:33', 'bigcommerce', 'a8hkeb4wzrcwfhynoq9v2lejbsem5en', '2015-07-25 21:58:33')[0m
+  [1m[35m (45.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/accounts/4/products/fetch
+Completed 302 Found in 56ms (ActiveRecord: 46.3ms)
+
+
+Started GET "/accounts/4/products/fetch" for 127.0.0.1 at 2015-07-26 02:58:33 +0500
+Processing by ProductsController#fetch as HTML
+  Parameters: {"account_id"=>"4"}
+  [1m[36mAccount Load (0.3ms)[0m  [1mSELECT  `accounts`.* FROM `accounts`  WHERE `accounts`.`id` = 4 LIMIT 1[0m
+Completed 500 Internal Server Error in 1795ms
+
+Bigcommerce::Forbidden ({"error":"You are authorized but your scope does not include this resource."}):
+  app/controllers/products_controller.rb:27:in `fetch'
+
+
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.7ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-26 03:21:13 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/railties-4.1.4/lib/rails/templates/rails/welcome/index.html.erb (28.5ms)
+Completed 200 OK in 78ms (Views: 67.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-26 03:21:35 +0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/railties-4.1.4/lib/rails/templates/rails/welcome/index.html.erb (0.1ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-26 10:47:48 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/railties-4.1.4/lib/rails/templates/rails/welcome/index.html.erb (38.1ms)
+Completed 200 OK in 132ms (Views: 111.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/bigcommerce" for 127.0.0.1 at 2015-07-26 10:47:50 +0500
+
+
+Started GET "/auth/bigcommerce/callback?code=mg4r2nr4m9xhu0o8gfpevzujn6vbjeu&scope=users_basic_information+store_v2_products+store_v2_information&state=593b96640aeca76acd3b99d49459cdbc0e74a55e4930a859" for 127.0.0.1 at 2015-07-26 10:48:02 +0500
+Processing by AccountsController#create as HTML
+  Parameters: {"code"=>"mg4r2nr4m9xhu0o8gfpevzujn6vbjeu", "scope"=>"users_basic_information store_v2_products store_v2_information", "state"=>"593b96640aeca76acd3b99d49459cdbc0e74a55e4930a859", "provider"=>"bigcommerce"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (14.7ms)[0m  [1mINSERT INTO `accounts` (`created_at`, `name`, `token`, `updated_at`) VALUES ('2015-07-26 05:48:05', 'bigcommerce', 'gnxqpk4k7lcgcny1uicaz4v0zscdbnk', '2015-07-26 05:48:05')[0m
+  [1m[35m (43.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/accounts/5/products/fetch
+Completed 302 Found in 127ms (ActiveRecord: 59.2ms)
+
+
+Started GET "/accounts/5/products/fetch" for 127.0.0.1 at 2015-07-26 10:48:05 +0500
+Processing by ProductsController#fetch as HTML
+  Parameters: {"account_id"=>"5"}
+  [1m[36mAccount Load (0.3ms)[0m  [1mSELECT  `accounts`.* FROM `accounts`  WHERE `accounts`.`id` = 5 LIMIT 1[0m
+Completed 500 Internal Server Error in 2095ms
+
+Bigcommerce::Forbidden ({"error":"You are authorized but your scope does not include this resource."}):
+  app/controllers/products_controller.rb:27:in `fetch'
+
+
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.6ms)
+
+
+Started GET "/auth/bigcommerce" for 127.0.0.1 at 2015-07-26 10:56:00 +0500
+
+
+Started GET "/auth/bigcommerce" for 127.0.0.1 at 2015-07-26 10:56:02 +0500
+
+
+Started GET "/auth/bigcommerce/callback?code=82syn0mj5hsdk5ckw62h23069thcq2r&scope=users_basic_information+store_v2_products+store_v2_information&state=dac09fcc4f2a585e73db177520f4c296975065f584afc76e" for 127.0.0.1 at 2015-07-26 10:56:10 +0500
+Processing by AccountsController#create as HTML
+  Parameters: {"code"=>"82syn0mj5hsdk5ckw62h23069thcq2r", "scope"=>"users_basic_information store_v2_products store_v2_information", "state"=>"dac09fcc4f2a585e73db177520f4c296975065f584afc76e", "provider"=>"bigcommerce"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `accounts` (`created_at`, `name`, `token`, `updated_at`) VALUES ('2015-07-26 05:56:13', 'bigcommerce', 'kd4yvervgehvi73ogzxkdcozl55z0rd', '2015-07-26 05:56:13')[0m
+  [1m[35m (63.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/accounts/6/products/fetch
+Completed 302 Found in 73ms (ActiveRecord: 64.7ms)
+
+
+Started GET "/accounts/6/products/fetch" for 127.0.0.1 at 2015-07-26 10:56:13 +0500
+Processing by ProductsController#fetch as HTML
+  Parameters: {"account_id"=>"6"}
+  [1m[36mAccount Load (0.3ms)[0m  [1mSELECT  `accounts`.* FROM `accounts`  WHERE `accounts`.`id` = 6 LIMIT 1[0m
+Completed 500 Internal Server Error in 1719ms
+
+Bigcommerce::Forbidden ({"error":"You are authorized but your scope does not include this resource."}):
+  app/controllers/products_controller.rb:28:in `fetch'
+
+
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (30.6ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (43.8ms)
+
+
+Started GET "/auth/bigcommerce" for 127.0.0.1 at 2015-07-26 10:56:51 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+
+
+Started GET "/auth/bigcommerce" for 127.0.0.1 at 2015-07-26 10:56:52 +0500
+
+
+Started GET "/auth/bigcommerce/callback?code=anzta4yuo4spv7gr136kn8vq6a85818&scope=users_basic_information&state=f8af44e31e1a2b39bd9f8e9ff8e21da43b45f2f83f41c6f4" for 127.0.0.1 at 2015-07-26 10:56:54 +0500
+Processing by AccountsController#create as HTML
+  Parameters: {"code"=>"anzta4yuo4spv7gr136kn8vq6a85818", "scope"=>"users_basic_information", "state"=>"f8af44e31e1a2b39bd9f8e9ff8e21da43b45f2f83f41c6f4", "provider"=>"bigcommerce"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO `accounts` (`created_at`, `name`, `token`, `updated_at`) VALUES ('2015-07-26 05:56:57', 'bigcommerce', 'b9bebi7111wvovtyv5dz4ip7zjdzpkq', '2015-07-26 05:56:57')[0m
+  [1m[35m (55.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/accounts/7/products/fetch
+Completed 302 Found in 102ms (ActiveRecord: 58.0ms)
+
+
+Started GET "/accounts/7/products/fetch" for 127.0.0.1 at 2015-07-26 10:56:57 +0500
+Processing by ProductsController#fetch as HTML
+  Parameters: {"account_id"=>"7"}
+  [1m[36mAccount Load (0.3ms)[0m  [1mSELECT  `accounts`.* FROM `accounts`  WHERE `accounts`.`id` = 7 LIMIT 1[0m
+Completed 500 Internal Server Error in 1734ms
+
+Bigcommerce::Forbidden ({"error":"You are authorized but your scope does not include this resource."}):
+  app/controllers/products_controller.rb:28:in `fetch'
+
+
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (28.9ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (45.1ms)
+
+
+Started GET "/auth/bigcommerce" for 127.0.0.1 at 2015-07-26 10:57:18 +0500
+
+
+Started GET "/auth/bigcommerce/callback?code=hlxh6emaihfpq38x8e3tyte6mryfyio&scope=users_basic_information&state=6dc9a1e3587b71b9a1eccee0eb103695ebff662c65b7b606" for 127.0.0.1 at 2015-07-26 10:57:21 +0500
+Processing by AccountsController#create as HTML
+  Parameters: {"code"=>"hlxh6emaihfpq38x8e3tyte6mryfyio", "scope"=>"users_basic_information", "state"=>"6dc9a1e3587b71b9a1eccee0eb103695ebff662c65b7b606", "provider"=>"bigcommerce"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `accounts` (`created_at`, `name`, `token`, `updated_at`) VALUES ('2015-07-26 05:57:23', 'bigcommerce', '51gm1iyz2l8652hbv08uvwi44pn5vgd', '2015-07-26 05:57:23')[0m
+  [1m[35m (55.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/accounts/8/products/fetch
+Completed 302 Found in 59ms (ActiveRecord: 55.8ms)
+
+
+Started GET "/auth/bigcommerce" for 127.0.0.1 at 2015-07-26 10:57:23 +0500
+
+
+Started GET "/auth/bigcommerce/callback?code=4kx3giay2d0vx0thd38qlanwawph9ra&scope=users_basic_information&state=234dd027e8a6ffa622142d3902eea7fa53b0d8dc33c8557f" for 127.0.0.1 at 2015-07-26 10:57:25 +0500
+Processing by AccountsController#create as HTML
+  Parameters: {"code"=>"4kx3giay2d0vx0thd38qlanwawph9ra", "scope"=>"users_basic_information", "state"=>"234dd027e8a6ffa622142d3902eea7fa53b0d8dc33c8557f", "provider"=>"bigcommerce"}
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `accounts` (`created_at`, `name`, `token`, `updated_at`) VALUES ('2015-07-26 05:57:28', 'bigcommerce', 'blh6fqss3z7101x28lzkqzdkzddiyf5', '2015-07-26 05:57:28')
+  [1m[36m (81.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/accounts/9/products/fetch
+Completed 302 Found in 86ms (ActiveRecord: 82.0ms)
+
+
+Started GET "/accounts/9/products/fetch" for 127.0.0.1 at 2015-07-26 10:57:28 +0500
+Processing by ProductsController#fetch as HTML
+  Parameters: {"account_id"=>"9"}
+  [1m[35mAccount Load (0.3ms)[0m  SELECT  `accounts`.* FROM `accounts`  WHERE `accounts`.`id` = 9 LIMIT 1
+Completed 500 Internal Server Error in 1889ms
+
+Bigcommerce::Forbidden ({"error":"You are authorized but your scope does not include this resource."}):
+  app/controllers/products_controller.rb:28:in `fetch'
+
+
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.9ms)
+
+
+Started GET "/auth/bigcommerce" for 127.0.0.1 at 2015-07-26 11:13:34 +0500
+
+
+Started GET "/auth/bigcommerce" for 127.0.0.1 at 2015-07-26 11:13:36 +0500
+
+
+Started GET "/auth/bigcommerce/callback?code=doa09rgh48jsnnpx5ql1f1xr71mztr8&scope=users_basic_information&state=e1b6f6c927bc7cd36e899ffb6450639e5f2e358c330c0300" for 127.0.0.1 at 2015-07-26 11:13:38 +0500
+Processing by AccountsController#create as HTML
+  Parameters: {"code"=>"doa09rgh48jsnnpx5ql1f1xr71mztr8", "scope"=>"users_basic_information", "state"=>"e1b6f6c927bc7cd36e899ffb6450639e5f2e358c330c0300", "provider"=>"bigcommerce"}
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `accounts` (`created_at`, `name`, `token`, `updated_at`) VALUES ('2015-07-26 06:13:41', 'bigcommerce', 'rf51wcxuwmq0lc2nhu4ajcph70kr2tb', '2015-07-26 06:13:41')
+  [1m[36m (61.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/accounts/10/products/fetch
+Completed 302 Found in 69ms (ActiveRecord: 62.6ms)
+
+
+Started GET "/accounts/10/products/fetch" for 127.0.0.1 at 2015-07-26 11:13:41 +0500
+Processing by ProductsController#fetch as HTML
+  Parameters: {"account_id"=>"10"}
+  [1m[35mAccount Load (0.3ms)[0m  SELECT  `accounts`.* FROM `accounts`  WHERE `accounts`.`id` = 10 LIMIT 1
+Completed   in 8974ms
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-26 11:15:23 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/railties-4.1.4/lib/rails/templates/rails/welcome/index.html.erb (26.3ms)
+Completed 200 OK in 72ms (Views: 62.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/bigcommerce" for 127.0.0.1 at 2015-07-26 11:15:23 +0500
+
+
+Started GET "/auth/bigcommerce/callback?code=gimdlxxoey7yyrv4carac6z39o346f2&scope=users_basic_information+store_v2_products+store_v2_information+store_v2_products_read_only&state=77cb40014ca95c1b2f2e3438400472b566b65bb40ebde802" for 127.0.0.1 at 2015-07-26 11:15:30 +0500
+Processing by AccountsController#create as HTML
+  Parameters: {"code"=>"gimdlxxoey7yyrv4carac6z39o346f2", "scope"=>"users_basic_information store_v2_products store_v2_information store_v2_products_read_only", "state"=>"77cb40014ca95c1b2f2e3438400472b566b65bb40ebde802", "provider"=>"bigcommerce"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO `accounts` (`created_at`, `name`, `token`, `updated_at`) VALUES ('2015-07-26 06:15:33', 'bigcommerce', 'q0b610uv9aifcc7kh69g4e16dnyz9p4', '2015-07-26 06:15:33')[0m
+  [1m[35m (69.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/accounts/11/products/fetch
+Completed 302 Found in 116ms (ActiveRecord: 71.8ms)
+
+
+Started GET "/accounts/11/products/fetch" for 127.0.0.1 at 2015-07-26 11:15:33 +0500
+Processing by ProductsController#fetch as HTML
+  Parameters: {"account_id"=>"11"}
+  [1m[36mAccount Load (0.2ms)[0m  [1mSELECT  `accounts`.* FROM `accounts`  WHERE `accounts`.`id` = 11 LIMIT 1[0m
+Completed 500 Internal Server Error in 1689ms
+
+Bigcommerce::Forbidden ({"error":"You are authorized but your scope does not include this resource."}):
+  app/controllers/products_controller.rb:28:in `fetch'
+
+
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.4ms)
+
+
+Started GET "/auth/bigcommerce" for 127.0.0.1 at 2015-07-26 11:22:23 +0500
+
+
+Started GET "/auth/bigcommerce" for 127.0.0.1 at 2015-07-26 11:22:26 +0500
+
+
+Started GET "/auth/bigcommerce/callback?code=f1y3es8jzu1r1ecvk5n87yb0zgv9hma&scope=users_basic_information+store_v2_products+store_v2_information+store_v2_products_read_only&state=2d1d5b9e1c6a6aa0c9b71f6ade5c46c6e7400444e1c3ab17" for 127.0.0.1 at 2015-07-26 11:22:34 +0500
+Processing by AccountsController#create as HTML
+  Parameters: {"code"=>"f1y3es8jzu1r1ecvk5n87yb0zgv9hma", "scope"=>"users_basic_information store_v2_products store_v2_information store_v2_products_read_only", "state"=>"2d1d5b9e1c6a6aa0c9b71f6ade5c46c6e7400444e1c3ab17", "provider"=>"bigcommerce"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `accounts` (`created_at`, `name`, `token`, `updated_at`) VALUES ('2015-07-26 06:22:36', 'bigcommerce', 'siicf13pwuqv5buncjhd3pd6owzlbvw', '2015-07-26 06:22:36')[0m
+  [1m[35m (70.7ms)[0m  COMMIT
+Redirected to http://localhost:3000/accounts/12/products/fetch
+Completed 302 Found in 78ms (ActiveRecord: 71.6ms)
+
+
+Started GET "/accounts/12/products/fetch" for 127.0.0.1 at 2015-07-26 11:22:37 +0500
+Processing by ProductsController#fetch as HTML
+  Parameters: {"account_id"=>"12"}
+  [1m[36mAccount Load (0.2ms)[0m  [1mSELECT  `accounts`.* FROM `accounts`  WHERE `accounts`.`id` = 12 LIMIT 1[0m
+Completed 500 Internal Server Error in 1122ms
+
+JSON::ParserError (757: unexpected token at '<html>
+<head><title>400 The plain HTTP request was sent to HTTPS port</title></head>
+<body bgcolor="white">
+<center><h1>400 Bad Request</h1></center>
+<center>The plain HTTP request was sent to HTTPS port</center>
+<hr><center>nginx</center>
+</body>
+</html>
+'):
+  app/controllers/products_controller.rb:25:in `fetch'
+
+
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.4ms)
+
+
+Started GET "/auth/bigcommerce" for 127.0.0.1 at 2015-07-26 11:23:31 +0500
+
+
+Started GET "/auth/bigcommerce" for 127.0.0.1 at 2015-07-26 11:23:32 +0500
+
+
+Started GET "/auth/bigcommerce/callback?code=dg3752v7r96v2ua68bimhfgwf2rbx2b&scope=users_basic_information+store_v2_products+store_v2_information+store_v2_products_read_only&state=608381849b6eefc149e26557b743f178a44e833d4ca290a5" for 127.0.0.1 at 2015-07-26 11:23:38 +0500
+Processing by AccountsController#create as HTML
+  Parameters: {"code"=>"dg3752v7r96v2ua68bimhfgwf2rbx2b", "scope"=>"users_basic_information store_v2_products store_v2_information store_v2_products_read_only", "state"=>"608381849b6eefc149e26557b743f178a44e833d4ca290a5", "provider"=>"bigcommerce"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `accounts` (`created_at`, `name`, `token`, `updated_at`) VALUES ('2015-07-26 06:23:41', 'bigcommerce', 's92oncgq27e4ssvn0nbr0i6klzckp8d', '2015-07-26 06:23:41')[0m
+  [1m[35m (65.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/accounts/13/products/fetch
+Completed 302 Found in 73ms (ActiveRecord: 66.1ms)
+
+
+Started GET "/accounts/13/products/fetch" for 127.0.0.1 at 2015-07-26 11:23:41 +0500
+Processing by ProductsController#fetch as HTML
+  Parameters: {"account_id"=>"13"}
+  [1m[36mAccount Load (0.3ms)[0m  [1mSELECT  `accounts`.* FROM `accounts`  WHERE `accounts`.`id` = 13 LIMIT 1[0m
+Completed 500 Internal Server Error in 786ms
+
+JSON::ParserError (757: unexpected token at '<?xml version="1.0"?>
+<errors><error><status>401</status><message>No credentials were supplied in the request.</message></error></errors>
+'):
+  app/controllers/products_controller.rb:25:in `fetch'
+
+
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.8ms)
+
+
+Started GET "/auth/bigcommerce" for 127.0.0.1 at 2015-07-26 11:25:08 +0500
+
+
+Started GET "/auth/bigcommerce" for 127.0.0.1 at 2015-07-26 11:25:09 +0500
+
+
+Started GET "/auth/bigcommerce/callback?code=5xhenq9wnhhgvm1bk7rb94np2syodru&scope=users_basic_information+store_v2_products+store_v2_information+store_v2_products_read_only&state=2bb732863d92684d9051991b5bd62b5d6ae5a9071d35b769" for 127.0.0.1 at 2015-07-26 11:25:16 +0500
+Processing by AccountsController#create as HTML
+  Parameters: {"code"=>"5xhenq9wnhhgvm1bk7rb94np2syodru", "scope"=>"users_basic_information store_v2_products store_v2_information store_v2_products_read_only", "state"=>"2bb732863d92684d9051991b5bd62b5d6ae5a9071d35b769", "provider"=>"bigcommerce"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `accounts` (`created_at`, `name`, `token`, `updated_at`) VALUES ('2015-07-26 06:25:19', 'bigcommerce', 'ausegtvu1pnlo0vr8oz9ugnmnviv9na', '2015-07-26 06:25:19')[0m
+  [1m[35m (64.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/accounts/14/products/fetch
+Completed 302 Found in 72ms (ActiveRecord: 65.4ms)
+
+
+Started GET "/accounts/14/products/fetch" for 127.0.0.1 at 2015-07-26 11:25:19 +0500
+Processing by ProductsController#fetch as HTML
+  Parameters: {"account_id"=>"14"}
+  [1m[36mAccount Load (0.2ms)[0m  [1mSELECT  `accounts`.* FROM `accounts`  WHERE `accounts`.`id` = 14 LIMIT 1[0m
+Completed 500 Internal Server Error in 930ms
+
+JSON::ParserError (757: unexpected token at '<?xml version="1.0"?>
+<errors><error><status>401</status><message>No credentials were supplied in the request.</message></error></errors>
+'):
+  app/controllers/products_controller.rb:25:in `fetch'
+
+
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.7ms)
+
+
+Started GET "/auth/bigcommerce" for 127.0.0.1 at 2015-07-26 11:26:23 +0500
+
+
+Started GET "/auth/bigcommerce" for 127.0.0.1 at 2015-07-26 11:26:26 +0500
+
+
+Started GET "/auth/bigcommerce/callback?code=39kw8jbcz9iyts972y9am43obhmhitg&scope=users_basic_information+store_v2_products+store_v2_information+store_v2_products_read_only&state=c2b2e26950e2ee503325069d75c8072a2e7756474e063d6d" for 127.0.0.1 at 2015-07-26 11:26:34 +0500
+Processing by AccountsController#create as HTML
+  Parameters: {"code"=>"39kw8jbcz9iyts972y9am43obhmhitg", "scope"=>"users_basic_information store_v2_products store_v2_information store_v2_products_read_only", "state"=>"c2b2e26950e2ee503325069d75c8072a2e7756474e063d6d", "provider"=>"bigcommerce"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `accounts` (`created_at`, `name`, `token`, `updated_at`) VALUES ('2015-07-26 06:26:37', 'bigcommerce', 'nysqqnzi731s6iwvqfmlj1s824deivb', '2015-07-26 06:26:37')[0m
+  [1m[35m (64.9ms)[0m  COMMIT
+Redirected to http://localhost:3000/accounts/15/products/fetch
+Completed 302 Found in 73ms (ActiveRecord: 65.9ms)
+
+
+Started GET "/accounts/15/products/fetch" for 127.0.0.1 at 2015-07-26 11:26:37 +0500
+Processing by ProductsController#fetch as HTML
+  Parameters: {"account_id"=>"15"}
+  [1m[36mAccount Load (0.3ms)[0m  [1mSELECT  `accounts`.* FROM `accounts`  WHERE `accounts`.`id` = 15 LIMIT 1[0m
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-27 11:12:03 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (34.9ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/railties-4.1.4/lib/rails/templates/rails/welcome/index.html.erb (27.1ms)
+Completed 200 OK in 247ms (Views: 200.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/bigcommerce" for 127.0.0.1 at 2015-07-27 11:12:09 +0500
+
+
+Started GET "/auth/bigcommerce" for 127.0.0.1 at 2015-07-27 11:12:22 +0500
+
+
+Started GET "/auth/bigcommerce" for 127.0.0.1 at 2015-07-27 11:12:23 +0500
+
+
+Started GET "/auth/bigcommerce/callback?code=m68h1c7mxhxz18hvhoytbfsxbn5eqai&scope=users_basic_information+store_v2_products+store_v2_information+store_v2_products_read_only&state=dbabcae861d47d9f11bb8546a3c1f24875d3ed6edca12836" for 127.0.0.1 at 2015-07-27 11:12:31 +0500
+Processing by AccountsController#create as HTML
+  Parameters: {"code"=>"m68h1c7mxhxz18hvhoytbfsxbn5eqai", "scope"=>"users_basic_information store_v2_products store_v2_information store_v2_products_read_only", "state"=>"dbabcae861d47d9f11bb8546a3c1f24875d3ed6edca12836", "provider"=>"bigcommerce"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (284.3ms)[0m  [1mINSERT INTO `accounts` (`created_at`, `name`, `token`, `updated_at`) VALUES ('2015-07-27 06:12:35', 'bigcommerce', 'ktu77p84uivrqephtalhl4v4g6oudv1', '2015-07-27 06:12:35')[0m
+  [1m[35m (194.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/accounts/16/products/fetch
+Completed 302 Found in 629ms (ActiveRecord: 479.8ms)
+
+
+Started GET "/accounts/16/products/fetch" for 127.0.0.1 at 2015-07-27 11:12:35 +0500
+Processing by ProductsController#fetch as HTML
+  Parameters: {"account_id"=>"16"}
+  [1m[36mAccount Load (47.0ms)[0m  [1mSELECT  `accounts`.* FROM `accounts`  WHERE `accounts`.`id` = 16 LIMIT 1[0m
+Completed 500 Internal Server Error in 3176ms
+
+Bigcommerce::Forbidden ({"error":"You are authorized but your scope does not include this resource."}):
+  app/controllers/products_controller.rb:28:in `fetch'
+
+
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/devsinc/.rvm/gems/ruby-1.9.3-p547@ereader_auther/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (45.4ms)
